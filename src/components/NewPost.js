@@ -25,20 +25,16 @@ function NewPost({ onCancel, onAddPost }) {
   }
   return (
     <form className={styles.form} onSubmit={submitHandler}>
-      <p>
-        <label htmlFor="body">Text</label>
-        <textarea id="body" required rows={3} onChange={bodyChangeHandler} />
-      </p>
-      <p>
-        <label htmlFor="name">Your name</label>
-        <input type="text" id="name" required onChange={authorChangeHandler} />
-      </p>
-      <p className={styles.actions}>
+      <label htmlFor="body">Text</label>
+      <textarea id="body" required rows={3} onChange={bodyChangeHandler} />
+      <label htmlFor="name">Your name</label>
+      <input type="text" id="name" required onChange={authorChangeHandler} />
+      <div className={styles.actions}>
         <button type="button" onClick={onCancel}>
           Cancel
         </button>
         <button>Submit</button>
-      </p>
+      </div>
     </form>
   );
 }

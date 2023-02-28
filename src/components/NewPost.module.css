@@ -2,9 +2,11 @@
   background-color: indigo;
   padding: 1rem;
   width: 20rem;
-  margin: 2rem auto;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: grid;
+  gap: 0.5rem;
+  justify-content: stretch;
 }
 
 .form label {
@@ -17,7 +19,6 @@
 .form input,
 .form textarea {
   display: block;
-  width: 100%;
   font: inherit;
   padding: 0.5rem;
   border-radius: 6px;
@@ -46,11 +47,10 @@
   background-color: #23014a;
 }
 
-.actions button[type='button'] {
+.actions button[type="button"] {
   background-color: transparent;
 }
 
-.actions button[type='button']:hover {
+.actions button[type="button"]:hover {
   color: #d1bee6;
 }
-
