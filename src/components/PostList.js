@@ -9,32 +9,30 @@ function PostList({ isVisible, onHideModal }) {
   const [posts, setPosts] = useState([]);
 
   function addPostHandler(postData) {
-    setPosts((existingPosts) => [postData, ...existingPosts]);
+    const copy = { ...postData, id: Math.random() };
+    const nextPosts = [copy, ...posts];
+    setPosts(nextPosts);
     // making sure that the existing posts are added to the array. If you need to keep existing data
     // you should use the functional code that makes sure we use the latest state.
   }
 
   return (
     <>
-      {isVisible ? (
+      {isVisible && (
         <Modal onClose={() => onHideModal}>
           <NewPost onCancel={onHideModal} onAddPost={addPostHandler} />
         </Modal>
-      ) : (
-        false
       )}
-      {posts.length > 0 && (
-         <ul className={styles.posts}>
-         {posts.map((post) => (
-           <Post key={Math.random()} author={post.author} body={post.body} />
-         ))}
-       </ul>
+      <ul className={styles.posts}>
+        {posts.map((post) => (
+          <Post author={post.author} body={post.body} />
+        ))}
+      </ul>
+      {posts.length === 0 && (
+        <div style={{ textAlign: "center", color: "indigo" }}>
+          <h2>There are no posts yet!</h2>
+        </div>
       )}
-     {posts.length === 0 && (
-      <div style={{textAlign: "center", color: "indigo"}}>
-        <h2>There are no posts yet!</h2>
-      </div>
-     )}
     </>
   );
 }
