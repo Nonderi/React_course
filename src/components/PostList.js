@@ -5,15 +5,14 @@ import Modal from "./Modal";
 import { useState } from "react";
 
 function PostList({ isVisible, onHideModal }) {
-  // define [(initial) state, updated state] = useState(argument = the initial state).
+  // define [(initial) state, updated state] = useState(argument = default/initial state).
   const [posts, setPosts] = useState([]);
 
   function addPostHandler(postData) {
-    const copy = { ...postData, id: Math.random() };
-    const nextPosts = [copy, ...posts];
+    const copy = { ...postData, id: Math.random() }; // Copying the postData and creating an id.
+    const nextPosts = [copy, ...posts]; // adding ned post to a copy of existing list of posts.
+    console.log(nextPosts);
     setPosts(nextPosts);
-    // making sure that the existing posts are added to the array. If you need to keep existing data
-    // you should use the functional code that makes sure we use the latest state.
   }
 
   return (
