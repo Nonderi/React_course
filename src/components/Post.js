@@ -1,4 +1,5 @@
 import styles from "./Post.module.css";
+import React from "react";
 
 function Post({author, body}) {
   return (

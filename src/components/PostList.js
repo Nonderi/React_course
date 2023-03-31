@@ -1,3 +1,4 @@
+import React from "react";
 import Post from "./Post";
 import NewPost from "./NewPost";
 import styles from "./PostList.module.css";
