@@ -28,7 +28,7 @@ function PostList({ isVisible, onHideModal }) {
         ))}
       </ul>
       {posts.length === 0 && (
-        <div style={{ textAlign: "center", color: "indigo" }}>
+        <div style={{ textAlign: "center", color: "#044a4e" }}>
           <h2>There are no posts yet!</h2>
         </div>
       )}
