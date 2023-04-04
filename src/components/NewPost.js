@@ -1,5 +1,6 @@
 import styles from "./NewPost.module.css";
 import { useState } from "react";
+import React from "react";
 
 function NewPost({ onCancel, onAddPost }) {
   const [enteredBody, setEnteredBody] = useState("");
